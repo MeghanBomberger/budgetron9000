@@ -1,0 +1,40 @@
+{
+  "name": "budgetron9000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "dev": "nodemon -x ts-node server.ts",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "start": "ts-node server.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeghanBomberger/budgetron9000.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeghanBomberger/budgetron9000/issues"
+  },
+  "homepage": "https://github.com/MeghanBomberger/budgetron9000#readme",
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.18",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "serve-static": "^1.15.0",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.9.4"
+  }
+}

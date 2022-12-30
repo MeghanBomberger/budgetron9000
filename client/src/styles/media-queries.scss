@@ -1,0 +1,15 @@
+$phone: 600px;
+
+@mixin small-media {
+  @media screen and (max-width: $phone) {
+    @content
+  }
+
+  ;
+}
+
+@mixin large-media {
+  @media screen and (min-width: $phone) {
+    @content
+  };
+}

@@ -1,0 +1,13 @@
+@import '../../styles';
+
+.ledger {
+  grid-column: 1;
+  grid-row: 2/4;
+  border-right: $primary $thick solid;
+
+  @include small-media {
+    grid-column: 1/4;
+    grid-row: 3;
+    border-right: none;
+  }
+}

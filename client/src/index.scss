@@ -1,0 +1,18 @@
+@import './styles';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  color: $primary;
+  @include primaryFont;
+}
+
+body {
+  background-color: $background;
+}
+
+button,
+a {
+  outline: $secondary;
+}

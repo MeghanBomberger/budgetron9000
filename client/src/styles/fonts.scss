@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&family=Roboto&display=swap');
+
+@mixin primaryFont {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin secondaryFont {
+  font-family: 'Prosto One', cursive;
+}

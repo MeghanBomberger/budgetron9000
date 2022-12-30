@@ -1,0 +1,14 @@
+@import '../../styles/';
+
+.not-found {
+  @include centerV;
+
+  h2 {
+    @include primaryFont;
+    font-size: 7rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+}

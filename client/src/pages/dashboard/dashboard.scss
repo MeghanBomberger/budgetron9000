@@ -1,0 +1,8 @@
+@import '../../styles';
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: $headerHeight auto auto;
+  min-height: 100vh;
+}

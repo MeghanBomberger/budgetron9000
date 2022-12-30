@@ -1,0 +1,28 @@
+@import '../../styles/';
+
+.home {
+  @include centerV;
+  min-height: 100vh;
+
+  h1 {
+    @include secondaryFont;
+    font-size: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  a>button {
+    padding: 1rem 3rem;
+    background-color: $primary;
+    color: $background;
+    font-size: 3rem;
+    text-transform: uppercase;
+    border-radius: 5rem;
+    border: $background solid 0.3rem;
+    outline: $primary solid 1rem;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $secondary 0 0 6rem;
+    }
+  }
+}
