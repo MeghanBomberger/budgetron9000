@@ -10,4 +10,16 @@
     grid-row: 3;
     border-right: none;
   }
+
+  .ledger-header {
+    @include centerH;
+    height: $headerHeight;
+    border-bottom: $primary $medium solid;
+
+    h2 {
+      @include secondaryFont;
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
 }

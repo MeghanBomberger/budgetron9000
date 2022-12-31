@@ -1,18 +1,22 @@
 import { Dayjs } from 'dayjs'
 import { useCallback, useState } from 'react'
-import { CalendarHeader } from './calendar-header'
 
-import './calendar.scss'
+import './Calendar.scss'
+import { CalendarHeader } from './CalendarHeader'
 import { CalendarWeek } from './CalendarWeek'
 import { getSelectedMonth } from './helpers'
-import { SelectedMonth } from './types'
+import { SelectedDate, SelectedMonth } from './types'
 
 interface CalendarProps {
   now: Dayjs;
+  selectedDate: SelectedDate | null;
+  setSelectedDate: (date: SelectedDate | null) => void;
 }
 
 export const Calendar = ({
   now,
+  selectedDate,
+  setSelectedDate,
 }: CalendarProps) => {
   const [selectedMonth, setSelectedMonth] = useState<SelectedMonth>(getSelectedMonth(now))
 
@@ -38,6 +42,8 @@ export const Calendar = ({
           week={selectedMonth.calendar[parseInt(weekKey)]}
           weekIndex={parseInt(weekKey)}
           currentMonth={selectedMonth.monthLabel}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
         />
       ))}
     </main>

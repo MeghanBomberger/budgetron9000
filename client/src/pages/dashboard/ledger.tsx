@@ -1,9 +1,18 @@
-import './ledger.scss'
+import './Ledger.scss'
+import { SelectedDate } from './types'
 
-export const Ledger = () => {
+interface LedgerProps {
+  selectedDate: SelectedDate | null;
+}
+
+export const Ledger = ({
+  selectedDate,
+}: LedgerProps) => {
   return (
     <aside className="ledger">
-      LEDGER
+      <header className="ledger-header">
+        <h2>{selectedDate?.date.format('MMMM D, YYYY') || 'No date selected'}</h2>
+      </header>
     </aside>
   )
 }

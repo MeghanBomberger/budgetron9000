@@ -1,4 +1,4 @@
-import './not-found.scss'
+import './NotFound.scss'
 
 export const NotFound = () => {
   return (

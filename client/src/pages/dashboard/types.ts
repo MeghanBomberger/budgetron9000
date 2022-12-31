@@ -9,3 +9,7 @@ export interface SelectedMonth {
   startOfMonth: Dayjs;
   calendar: CalendarWeeks;
 }
+
+export interface SelectedDate {
+  date: Dayjs;
+}

@@ -39,10 +39,21 @@
     display: grid;
     grid-template-columns: 2.5rem auto;
     grid-template-rows: 2.5rem auto;
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
     border-right: $primary solid 1px;
     border-bottom: $primary solid 1px;
+    border-left: none;
+    border-top: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: $secondary18 !important;
+    }
 
     div {
       grid-column: 1;
@@ -53,8 +64,33 @@
       background-color: $background;
 
       p {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 900;
+      }
+    }
+  }
+
+  .out-of-scope {
+    background-color: $primary18;
+  }
+
+  .in-scope {
+    background-color: $background;
+  }
+
+  .selected-date {
+    margin: -1px 0 0 -1px;
+    background-color: $secondary18;
+    border: $secondary solid 2px;
+
+    div {
+      margin: -1px 0 0 -1px;
+      border-right: $secondary solid 1px;
+      border-bottom: $secondary solid 1px;
+      background-color: $secondary;
+
+      p {
+        color: black;
       }
     }
   }
