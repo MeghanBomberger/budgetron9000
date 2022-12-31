@@ -5,7 +5,7 @@
   grid-row: 2/4;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: $headerHeight, repeat(5, 1fr);
+  grid-template-rows: $headerHeight repeat(5, 1fr);
 
   @include small-media {
     grid-column: 1/4;
@@ -32,6 +32,30 @@
       border: none;
       cursor: pointer;
       font-size: 3rem;
+    }
+  }
+
+  .calendar-day {
+    display: grid;
+    grid-template-columns: 2.5rem auto;
+    grid-template-rows: 2.5rem auto;
+    width: 100%;
+    height: 100%;
+    border-right: $primary solid 1px;
+    border-bottom: $primary solid 1px;
+
+    div {
+      grid-column: 1;
+      grid-row: 1;
+      @include centerH;
+      border-right: $primary solid 1px;
+      border-bottom: $primary solid 1px;
+      background-color: $background;
+
+      p {
+        font-size: 2rem;
+        font-weight: 900;
+      }
     }
   }
 }

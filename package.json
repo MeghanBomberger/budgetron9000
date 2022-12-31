@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/MeghanBomberger/budgetron9000#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.20.2",
     "@types/cors": "^2.8.13",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.15",
@@ -36,5 +37,10 @@
     "ts-node": "^10.9.1",
     "tslint": "^6.1.3",
     "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
+    "@jest/globals": "^29.3.1",
+    "ts-jest": "^29.0.3"
   }
 }

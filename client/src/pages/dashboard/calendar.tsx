@@ -1,7 +1,9 @@
 import { Dayjs } from 'dayjs'
 import { useCallback, useState } from 'react'
+import { CalendarHeader } from './calendar-header'
 
 import './calendar.scss'
+import { CalendarWeek } from './CalendarWeek'
 import { getSelectedMonth } from './helpers'
 import { SelectedMonth } from './types'
 
@@ -26,31 +28,18 @@ export const Calendar = ({
 
   return (
     <main className="calendar">
-
-      <header className="calendar-header">
-        <button
-          className="calendar-nav"
-          onClick={() => {
-            goBackMonth()
-            console.log("go back")
-          }}
-        >
-          {'<'}
-        </button>
-
-        <h2>{selectedMonth.monthLabel}</h2>
-
-        <button
-          className="calendar-nav"
-          onClick={() => {
-            goForwardMonth()
-            console.log("go back")
-          }}
-        >
-          {'>'}
-        </button>
-      </header>
-
+      <CalendarHeader
+        goBackMonth={goBackMonth}
+        goForwardMonth={goForwardMonth}
+        selectedMonthLabel={selectedMonth.monthLabel}
+      />
+      {Object.keys(selectedMonth.calendar)?.map(weekKey => (
+        <CalendarWeek
+          week={selectedMonth.calendar[parseInt(weekKey)]}
+          weekIndex={parseInt(weekKey)}
+          currentMonth={selectedMonth.monthLabel}
+        />
+      ))}
     </main>
   )
 }
