@@ -20,6 +20,7 @@ import { Header } from '../../components'
 import { MonthCalendar } from './MonthCalendar'
 import { YearCalendar } from './YearCalendar'
 import { Ledger } from './Ledger'
+import { GraphView } from './GraphView'
 
 export const Dashboard = () => {
   const now = dayjs()
@@ -138,6 +139,10 @@ export const Dashboard = () => {
           goBackYear={goBackYear}
           goForwardYear={goForwardYear}
         />
+      )}
+
+      {selectedView === viewsList.graph && (
+        <GraphView/>
       )}
 
     </div>

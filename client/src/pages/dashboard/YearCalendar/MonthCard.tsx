@@ -83,6 +83,11 @@ export const MonthCard = ({
 
   const hasPast = (day: Dayjs) => day.isBefore(dayjs(), 'day')
 
+  const isToday = useCallback(
+    (day: Dayjs) => day.isSame(selectedDate, 'day'),
+    [selectedDate]
+  )
+
   return (
     <article 
       className="month-card"
@@ -102,7 +107,7 @@ export const MonthCard = ({
               key={`${monthLabel}-week${weekKey}-${day.format('mmm')}`}
               title={day.format('MMMM D, YYYY')}
               className={
-                `day-dot ${!isInMonth(day) && 'out-of-scope'} ${!!hasPast(day) && !!isInMonth(day) && 'past-day'}`
+                `day-dot ${!isInMonth(day) && 'out-of-scope'} ${!!hasPast(day) && !!isInMonth(day) && 'past-day'} ${!!isToday(day) && 'today'}`
               }
               disabled={!isInMonth(day)}
               onClick={() => getSelectedDate(day)}

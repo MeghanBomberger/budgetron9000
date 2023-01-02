@@ -22,12 +22,14 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto repeat(6, 1fr);
+    padding-bottom: 0.4rem;
     border-right: $primary $thin solid;
     border-bottom: $primary $thin solid;
 
     .month-card-header {
       grid-column: 1/8;
       grid-row: 1;
+      margin-bottom: 0.5rem;
       padding: 0.4rem;
       @include secondaryFont;
       font-size: 1.4rem;
@@ -55,6 +57,10 @@
 
     .past-day {
       opacity: 50%;
+    }
+
+    .today {
+      @include blinking-button;
     }
   }
 }

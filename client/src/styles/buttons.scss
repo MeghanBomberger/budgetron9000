@@ -16,3 +16,24 @@
     background-color: $secondary;
   }
 }
+
+@mixin blinking-button {
+  @keyframes glowing {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 $primary;
+    }
+  
+    70% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0.5rem rgba(0, 0, 0, 0);
+    }
+  
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+  animation: glowing 1500ms infinite;
+  transition: all 0.5s ease;
+}
