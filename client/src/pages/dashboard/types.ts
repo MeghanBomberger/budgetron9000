@@ -13,3 +13,12 @@ export interface SelectedMonth {
 export interface SelectedDate {
   date: Dayjs;
 }
+
+export interface ViewsList {
+  [key: string]: string;
+}
+
+export interface SelectedYear {
+  yearLabel: string;
+  startOfYear: Dayjs;
+}

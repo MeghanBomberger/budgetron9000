@@ -1,0 +1,28 @@
+@import '../../styles/index.scss';
+
+.calendar-header {
+  @include centerH;
+  justify-content: space-between;
+  height: $headerHeight;
+  border-bottom: $primary $medium solid;
+
+  h2 {
+    @include secondaryFont;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  .calendar-nav {
+    background-color: $background;
+    border: none;
+    cursor: pointer;
+    
+    img {
+      height: 3rem;
+    }
+
+    .back-arrow {
+      transform: rotate(180deg);
+    }
+  }
+}

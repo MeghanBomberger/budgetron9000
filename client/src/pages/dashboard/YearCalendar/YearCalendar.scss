@@ -1,0 +1,25 @@
+@import '../../../styles/index.scss';
+
+.year-calendar {
+  grid-column: 2/4;
+  grid-row: 2/4;
+
+  @include small-media {
+    grid-column: 1/4;
+    grid-row: 2;
+    border-bottom: $primary $thick solid;
+  }
+
+  .year-header {
+    @include centerH;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: $headerHeight;
+    border-bottom: $primary $medium solid;
+
+    h1 {
+      @include secondaryFont;
+      font-size: 2rem;
+    }
+  }
+}

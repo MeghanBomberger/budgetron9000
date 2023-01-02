@@ -2,7 +2,15 @@ import { Dayjs } from 'dayjs'
 import { 
   CalendarWeeks,
   SelectedMonth,
+  SelectedYear,
+  ViewsList,
 } from './types'
+
+export const viewsList: ViewsList = {
+  graph: 'graph',
+  month: 'month',
+  year: 'year',
+}
 
 export const monthLabelFormat = 'MMMM YYYY'
 
@@ -61,5 +69,12 @@ export const getSelectedMonth = (date: Dayjs): SelectedMonth => {
     monthLabel: date.format(monthLabelFormat),
     startOfMonth: date.startOf('month'),
     calendar: getCalendarWeeks(date)
+  }
+}
+
+export const getSelectedYear = (date: Dayjs): SelectedYear => {
+  return {
+    yearLabel: date.format('YYYY'),
+    startOfYear: date.startOf('year')
   }
 }

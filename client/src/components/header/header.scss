@@ -3,5 +3,51 @@
 .header {
   grid-column: 1/4;
   grid-row: 1;
+  @include centerH;
+  justify-content: space-between;
+  padding: 0 1rem;
   border-bottom: $primary 3px solid;
+
+  h1 {
+    @include secondaryFont;
+    font-size: 2rem;
+  }
+
+  .icon-container {
+    @include centerH;
+
+    .icon-button {
+      margin: 0 0.2rem;
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      
+      img {
+        width: 2rem;
+      }
+
+      &:hover {
+        filter: drop-shadow($primary 0 0 1rem);
+      }
+    }
+
+    .today-button {
+      margin-right: 2rem;
+      padding: 0.2rem 1rem 0 1rem;
+      background-color: $primary;
+      color: black;
+      @include secondaryFont;
+      font-size: 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-radius: 5rem;
+      border: $background $thin solid;
+      outline: $primary $medium solid;
+
+      &:hover {
+        filter: drop-shadow($primary 0 0 0.5rem);
+      }
+    }
+  }
 }

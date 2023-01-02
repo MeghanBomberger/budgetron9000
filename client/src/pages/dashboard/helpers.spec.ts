@@ -1,9 +1,10 @@
 import dayjs from 'dayjs'
 
 import { 
-  getSelectedMonth,
   getCalendarDays,
   getCalendarWeeks,
+  getSelectedMonth,
+  getSelectedYear,
 } from './helpers'
 
 const testDate = dayjs('Feb 1, 2023')
@@ -57,5 +58,14 @@ describe('getSelectedMonth', () => {
     expect(getSelectedMonth(testDate).calendar[2].length).toBe(7)
     expect(getSelectedMonth(testDate).calendar[3].length).toBe(7)
     expect(getSelectedMonth(testDate).calendar[4].length).toBe(7)
+  })
+})
+
+describe("getSelectedYear", () => {
+  test("yearLabel", () => {
+    expect(getSelectedYear(testDate).yearLabel).toBe("2023")
+  })
+  test("startOfYear", () => {
+    expect(getSelectedYear(testDate).startOfYear.format("M-D-YYYY")).toBe("1-1-2023")
   })
 })
