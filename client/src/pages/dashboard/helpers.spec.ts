@@ -9,6 +9,7 @@ import {
 
 const testDate = dayjs('Feb 1, 2023')
 const fourWeekFeb = dayjs('Feb 1, 2026')
+const sixWeekDec = dayjs('Dec 1, 2023')
 
 describe('getCalendarDays', () => {
   test("should have full month of dates", () => {
@@ -40,6 +41,9 @@ describe("getCalendarWeeks", () => {
   })
   test("feb 2026 does have 5th week", () => {
     expect(getCalendarWeeks(fourWeekFeb)[4]).toBeFalsy()
+  })
+  test('dec 2023 has 6 weeks', () => {
+    expect(getCalendarWeeks(sixWeekDec)[5]).toBeTruthy()
   })
 })
 

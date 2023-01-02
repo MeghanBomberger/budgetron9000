@@ -18,18 +18,7 @@ export interface SelectedYear {
   yearLabel: string;
   startOfYear: Dayjs;
   calendar: {
-    january: CalendarWeeks;
-    february: CalendarWeeks;
-    march: CalendarWeeks;
-    april: CalendarWeeks;
-    may: CalendarWeeks;
-    june: CalendarWeeks;
-    july: CalendarWeeks;
-    august: CalendarWeeks;
-    september: CalendarWeeks;
-    october: CalendarWeeks;
-    november: CalendarWeeks;
-    december: CalendarWeeks;
+    [month: string]: CalendarWeeks;
   }
 }
 

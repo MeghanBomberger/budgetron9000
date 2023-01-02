@@ -12,6 +12,8 @@ interface HeaderProps {
   selectedView: string;
   setSelectedView: (view: string) => void;
   selectedDate: Dayjs;
+  selectedMonth: Dayjs;
+  selectedYear: Dayjs;
   goToToday: () => void;
 }
 
@@ -20,6 +22,8 @@ export const Header = ({
   setSelectedView,
   goToToday,
   selectedDate,
+  selectedMonth,
+  selectedYear,
 }: HeaderProps) => {
 
   return (
@@ -28,7 +32,11 @@ export const Header = ({
 
       <div className="icon-container">
 
-        {!selectedDate.isSame(dayjs(), 'day') && (
+        {(
+          !selectedDate.isSame(dayjs(), 'day') ||
+          !selectedMonth.isSame(dayjs(), 'month') ||
+          !selectedYear.isSame(dayjs(), 'year')
+        ) && (
           <button
             className="today-button"
             onClick={goToToday}

@@ -51,13 +51,8 @@ export const getCalendarWeeks = (date: Dayjs): CalendarWeeks => {
   for (let i = 1; i <= endOfMonthFillIn; i++) {
     days.push(endOfMonth.add(i, 'day'))
   }
-  for (let i = 0; i <= 4; i++ ) {
-    if (
-      i === 4 && 
-      lengthOfMonth === 28 && 
-      startOfMonthDayOfWeek === 0 &&
-      days?.length === 0
-    ) {
+  for (let i = 0; i <= 5; i++ ) {
+    if (days?.length === 0) {
       break
     }
     const week = days.splice(0, 7)

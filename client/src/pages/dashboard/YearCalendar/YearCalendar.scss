@@ -3,6 +3,9 @@
 .year-calendar {
   grid-column: 2/4;
   grid-row: 2/4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: $headerHeight repeat(3, 1fr);
 
   @include small-media {
     grid-column: 1/4;
@@ -10,16 +13,48 @@
     border-bottom: $primary $thick solid;
   }
 
-  .year-header {
-    @include centerH;
-    justify-content: space-between;
-    padding: 0 1rem;
-    height: $headerHeight;
-    border-bottom: $primary $medium solid;
+  .calendar-header {
+    grid-column: 1/5;
+    grid-row: 1;
+  }
 
-    h1 {
+  .month-card {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto repeat(6, 1fr);
+    border-right: $primary $thin solid;
+    border-bottom: $primary $thin solid;
+
+    .month-card-header {
+      grid-column: 1/8;
+      grid-row: 1;
+      padding: 0.4rem;
       @include secondaryFont;
-      font-size: 2rem;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      text-align: center;
+      border-bottom: $primary $thin solid;
+    }
+
+    .day-dot {
+      margin: auto;
+      height: 1rem;
+      width: 1rem;
+      background-color: $primary;
+      border: none;
+      outline: none;
+      border-radius: 100%;
+      cursor: pointer;
+      @include button-hover-secondary-full;
+    }
+
+    .out-of-scope {
+      opacity: 0%;
+      cursor:auto;
+    }
+
+    .past-day {
+      opacity: 50%;
     }
   }
 }

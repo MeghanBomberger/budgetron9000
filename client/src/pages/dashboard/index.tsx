@@ -28,7 +28,7 @@ export const Dashboard = () => {
   })
   const [selectedMonth, setSelectedMonth] = useState<SelectedMonth>(getSelectedMonth(now))
   const [selectedYear, setSelectedYear] = useState<SelectedYear>(getSelectedYear(selectedDate.date))
-  const [selectedView, setSelectedView] = useState<string>(viewsList.month)
+  const [selectedView, setSelectedView] = useState<string>(viewsList.year)
 
   const syncViews = useCallback(
     (date: Dayjs) => {
@@ -111,6 +111,8 @@ export const Dashboard = () => {
         selectedView={selectedView}
         setSelectedView={setSelectedView}
         selectedDate={selectedDate.date}
+        selectedMonth={selectedMonth.startOfMonth}
+        selectedYear={selectedYear.startOfYear}
         goToToday={goToToday}
       />
 
