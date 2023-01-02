@@ -28,13 +28,15 @@ export const getCalendarDays = (date: Dayjs): Dayjs[] => {
   return days
 }
 
-export const getCalendarWeeks = (date: Dayjs): CalendarWeeks => {
-  const weeks: CalendarWeeks = {
+const defaultCalendarWeeks: CalendarWeeks = {
     0: [],
     1: [],
     2: [],
     3: []
   }
+
+export const getCalendarWeeks = (date: Dayjs): CalendarWeeks => {
+  const weeks = {...defaultCalendarWeeks}
   const days = getCalendarDays(date)
   const startOfMonth = days[0]
   const startOfMonthDayOfWeek = parseInt(startOfMonth.format('d'))
@@ -75,6 +77,20 @@ export const getSelectedMonth = (date: Dayjs): SelectedMonth => {
 export const getSelectedYear = (date: Dayjs): SelectedYear => {
   return {
     yearLabel: date.format('YYYY'),
-    startOfYear: date.startOf('year')
+    startOfYear: date.startOf('year'),
+    calendar: {
+      january: getSelectedMonth(date.month(0)).calendar,
+      february: getSelectedMonth(date.month(1)).calendar,
+      march: getSelectedMonth(date.month(2)).calendar,
+      april: getSelectedMonth(date.month(3)).calendar,
+      may: getSelectedMonth(date.month(4)).calendar,
+      june: getSelectedMonth(date.month(5)).calendar,
+      july: getSelectedMonth(date.month(6)).calendar,
+      august: getSelectedMonth(date.month(7)).calendar,
+      september: getSelectedMonth(date.month(8)).calendar,
+      october: getSelectedMonth(date.month(9)).calendar,
+      november: getSelectedMonth(date.month(10)).calendar,
+      december: getSelectedMonth(date.month(11)).calendar,
+    }
   }
 }
