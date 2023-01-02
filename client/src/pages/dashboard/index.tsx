@@ -26,6 +26,7 @@ export const Dashboard = () => {
   const now = dayjs()
   const [selectedDate, setSelectedDate] = useState<SelectedDate>({
     date: now,
+    transactions: []
   })
   const [selectedMonth, setSelectedMonth] = useState<SelectedMonth>(getSelectedMonth(now))
   const [selectedYear, setSelectedYear] = useState<SelectedYear>(getSelectedYear(selectedDate.date))
@@ -50,6 +51,7 @@ export const Dashboard = () => {
     (day: Dayjs) => {
       setSelectedDate({
         date: day,
+        transactions: []
       })
       syncViews(day)
     },

@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 
 import { 
+  formatToCurrency,
   getCalendarDays,
   getCalendarWeeks,
   getSelectedMonth,
@@ -86,5 +87,13 @@ describe("getSelectedYear", () => {
     expect(getSelectedYear(testDate).calendar.june[0][4].format("M-D-YYYY")).toBe("6-1-2023")
     expect(getSelectedYear(testDate).calendar.july[0][0].format("M-D-YYYY")).toBe("6-25-2023")
     expect(getSelectedYear(testDate).calendar.july[0][6].format("M-D-YYYY")).toBe("7-1-2023")
+  })
+})
+
+describe("formatToCurrency", () => {
+  test("formats number to currency", () => {
+    expect(formatToCurrency(5.55)).toBe('$5.55')
+    expect(formatToCurrency(0.5)).toBe('$0.50')
+    expect(formatToCurrency(5)).toBe('$5.00')
   })
 })

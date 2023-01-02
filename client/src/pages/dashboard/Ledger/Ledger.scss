@@ -15,11 +15,99 @@
     @include centerH;
     height: $headerHeight;
     border-bottom: $primary $medium solid;
+    width: 100%;
 
     h2 {
       @include secondaryFont;
-      font-size: 1.4rem;
+      font-size: 2rem;
       text-align: center;
+    }
+  }
+
+  table {
+    margin-right: -0.3rem;
+    width: 100%;
+    border-collapse: collapse;
+    
+    tr {
+      width: 100%;
+      border: $background $thin solid;
+    }
+
+    th, 
+    td {
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    td {
+      color: $secondary;
+      border-bottom: $background $thick solid;
+    }
+
+    thead {
+      border-bottom: $primary $medium solid;
+    }
+
+    th {
+      @include secondaryFont;
+      text-transform: uppercase;
+    }
+
+    .start-balance {
+      background-color: $secondary;
+      text-align: center;
+    }
+
+    .credit-desc, 
+    .debit-desc {
+      padding-left: 0.4rem;
+      width: 33%;
+      text-align: left;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    .balance {
+      width: 10rem;
+      border-bottom: $primary $thin solid;
+    }
+
+    .credit-value,
+    .debit-value {
+      padding: 0 0.4rem;
+      width: 5rem;
+      text-align: right;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-left: $background $thin solid;
+    }
+
+    .credit-value,
+    .credit-desc {
+      width: 10rem;
+      background-color: $success;
+      color: black;
+    }
+
+    .debit-value,
+    .debit-desc {
+      background-color: $error;
+      color: black;
+    }
+
+    .edit-cell {
+      width: 3rem;
+
+      button {
+        @include naked-button;
+        @include button-hover;
+
+        img {
+          margin: 0.4rem 0;
+          width: 1.5rem;
+        }
+      }
     }
   }
 }

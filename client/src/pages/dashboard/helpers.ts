@@ -89,3 +89,10 @@ export const getSelectedYear = (date: Dayjs): SelectedYear => {
     }
   }
 }
+
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
+
+export const formatToCurrency = (amount: number) => currencyFormatter.format(amount);

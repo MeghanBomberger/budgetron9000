@@ -1,11 +1,18 @@
 import { Dayjs } from 'dayjs'
 
-export interface CalendarWeeks {
-  [key: number]: Dayjs[];
+export interface Transaction {
+  date: Dayjs;
+  description: string;
+  amount: number;
 }
 
 export interface SelectedDate {
   date: Dayjs;
+  transactions: Transaction[];
+}
+
+export interface CalendarWeeks {
+  [key: number]: Dayjs[];
 }
 
 export interface SelectedMonth {
